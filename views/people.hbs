@@ -1,8 +1,30 @@
 <div class="container">
-    <div class="name"><h2>{{people.name}} {{people.surname}}</h2></div>
+    <div class="block-red"></div>
+    <div class="block-green" ></div>
+    <div class="name">
+        <h2>{{people.name}} {{people.surname}}</h2>
+    </div>
     <form action="/people/score/{{people.id}}" method="post">
         <input type="hidden" value="{{people.score}}" name="oldScore">
-        <input type="number" placeholder="Write a score" name="score">
-        <button type="submit">Submit</button>
+        <input class="class" type="number" placeholder="Write a score" name="score">
+        <button class="sub" type="submit">Submit</button>
     </form>
 </div>
+
+<style>
+    .name {
+        margin-top: 25%;
+    }
+    .class::placeholder{
+        text-transform: uppercase;
+    }
+
+    .sub {
+        border: 3px solid rgba(255, 255, 255, .040);
+        background: transparent;
+        text-transform: uppercase;
+        border-radius: 50px;
+        color : rgba(255, 255, 255, .40);
+        padding: 10px 30px;
+    }
+</style>
