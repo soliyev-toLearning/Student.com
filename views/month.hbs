@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="form">
+        <form style="display: flex; align-items: center;" action="/search">
+            <input type="text" class="inp" placeholder="Search" name="search" required>
+            <button type="submit"><img style="width: 16px;" src="/img/search-interface-symbol.png" alt=""></button>
+        </form>
+        <div class="block-green"></div>
+        <div class="block-blue"></div>
+    </div>  
+    <div class="block-green"></div>
+    <table>
+        <tr>
+            <th>No</th>
+            <th>Name/Surname</th>
+            <th>Score</th>
+            <th>Number</th>
+            <th>Group</th>
+            <th>Month</th>
+            <th>Edit</th>
+        </tr>
+        {{#if findPeople.length}}
+        {{#each findPeople}}
+        <tr>
+
+            <td class="top" >1</td>
+            <td>{{name}} {{surname}}</td>
+            <td>{{score}}</td>
+            <td>{{number}}</td>
+            <td>{{group}}</td>
+            <td>{{month}}</td>
+            <td class="btn"><a href="/people/{{id}}" class="edit">Edit</a></td>
+        </tr>
+        {{/each}}
+        {{else}}
+        <h2>Table is empty</h2>
+        {{/if}}
+    </table>
+    <div class="block-blue"></div>
+</div>

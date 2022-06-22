@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="form">
+        <form style="display: flex; align-items: center;" action="/search">
+            <input type="text" class="inp" placeholder="Search" name="search" required>
+            <button type="submit"><img style="width: 16px;" src="/img/search-interface-symbol.png" alt=""></button>
+        </form>
+        <div class="block-green"></div>
+        <div class="block-blue"></div>
+    </div>
+    <table>
+
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Name/Surname</th>
+                <th>Score</th>
+                <th>Number</th>
+                <th>Group</th>
+                <th>Month</th>
+                <th>Edit</th>
+            </tr>
+        </thead>
+
+        {{#if people.length}}
+        {{#each people}}
+
+
+        <tr>
+            <td class="top">1</td>
+            <td>{{name}} {{surname}}</td>
+            <td>{{score}}</td>
+            <td>{{number}}</td>
+            <td>{{group}}</td>
+            <td>{{month}}</td>
+            <td style="display: flex; align-items: center; justify-content: center;" class="btn"><a
+                    href="/people/{{id}}" class="edit">Edit<img width="20px" src="/img/pencil.png" alt=""></a></td>
+        </tr>
+
+        {{/each}}
+        {{else}}
+        <h2>Empty</h2>
+        {{/if}}
+    </table>
+    <div class="block-red"></div>
+    <div class="block-yellow"></div>
+</div>
+<script src="/script/ajax.js"></script>

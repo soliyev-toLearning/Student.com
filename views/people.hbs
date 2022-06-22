@@ -1,0 +1,8 @@
+<div class="container">
+    <div class="name"><h2>{{people.name}} {{people.surname}}</h2></div>
+    <form action="/people/score/{{people.id}}" method="post">
+        <input type="hidden" value="{{people.score}}" name="oldScore">
+        <input type="number" placeholder="Write a score" name="score">
+        <button type="submit">Submit</button>
+    </form>
+</div>
